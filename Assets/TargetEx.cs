@@ -6,23 +6,23 @@ public class TargetEx : MonoBehaviour
     void Start()
     {
         TargetBuilder movingTarget = new TargetBuilder.Builder()
-            .SetHealth(100f)
-            .SetSpeed(5)
-            .SetPointValue(10)
+            .SetHealth(5f)
+            .SetSpeed(2)
+            .SetPointValue(5)
             .SetBody(GameObject.CreatePrimitive(PrimitiveType.Cube))
             .Build();
 
         TargetBuilder movingTargetTwo = new TargetBuilder.Builder()
-            .SetHealth(100f)
-            .SetSpeed(5)
+            .SetHealth(10f)
+            .SetSpeed(3)
             .SetPointValue(10)
             .SetBody(GameObject.CreatePrimitive(PrimitiveType.Sphere))
             .Build();
 
         TargetBuilder movingTargetThree = new TargetBuilder.Builder()
-            .SetHealth(100f)
+            .SetHealth(15f)
             .SetSpeed(5)
-            .SetPointValue(10)
+            .SetPointValue(20)
             .SetBody(GameObject.CreatePrimitive(PrimitiveType.Cylinder))
             .Build();
     }

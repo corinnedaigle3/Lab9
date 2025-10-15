@@ -42,7 +42,6 @@ public class TargetBuilder : MonoBehaviour
 
         public TargetBuilder Build()
         {
-
             return targetBuilder;
         }
     }
