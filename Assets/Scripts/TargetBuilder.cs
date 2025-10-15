@@ -1,16 +1,13 @@
 using UnityEngine;
 
-public class TargetBuilder : MonoBehaviour
+public class TargetBuilder
 {
     public float health { get; private set; }
-    public int speed { get; private set; }
+    public float speed { get; private set; }
     public int pointValue { get; private set; }
-    public GameObject body { get; private set; }
+    public GameObject prefab { get; private set; }
 
-    private TargetBuilder()
-    {
-
-    }
+    private TargetBuilder() { }
 
     public class Builder
     {
@@ -22,7 +19,7 @@ public class TargetBuilder : MonoBehaviour
             return this;
         }
 
-        public Builder SetSpeed(int speed)
+        public Builder SetSpeed(float speed)
         {
             targetBuilder.speed = speed;
             return this;
@@ -34,15 +31,29 @@ public class TargetBuilder : MonoBehaviour
             return this;
         }
 
-        public Builder SetBody(GameObject body)
+        public Builder SetPrefab(GameObject prefab)
         {
-            targetBuilder.body = body;
+            targetBuilder.prefab = prefab;
             return this;
         }
 
-        public TargetBuilder Build()
+        public GameObject Build()
         {
-            return targetBuilder;
+            if (targetBuilder.prefab == null)
+            {
+                Debug.LogError("TargetBuilder: Prefab is null!");
+                return null;
+            }
+
+            GameObject target = Object.Instantiate(targetBuilder.prefab);
+            Target targetComponent = target.GetComponent<Target>();
+            if (targetComponent == null)
+            {
+                targetComponent = target.AddComponent<Target>();
+            }
+
+            targetComponent.Initialize(targetBuilder.speed);
+            return target;
         }
     }
 }
