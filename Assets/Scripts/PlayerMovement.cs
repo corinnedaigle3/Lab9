@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     void Start()
     {
-        bullet = ObjectPooling.SharedInstance.GetPooledObject();
+       // bullet = ObjectPooling.SharedInstance.GetPooledObject();
         moveSpeed = 10f;
     }
     void Update()
