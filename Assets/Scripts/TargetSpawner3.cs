@@ -11,6 +11,9 @@ public class TargetSpawner3 : MonoBehaviour
     public float spawnInterval; // seconds between spawns
     public Vector2 spawnPosition; // same position for all enemies
 
+    public ScoreSystem scoreSystem;
+
+
     void Start()
     {
         StartCoroutine(SpawnEnemiesForever());
@@ -40,6 +43,13 @@ public class TargetSpawner3 : MonoBehaviour
 
             // Spawn at the same fixed position
             target.transform.position = spawnPosition;
+
+            Subject subject = target.GetComponent<Subject>();
+            if (subject != null)
+            {
+                subject.points = 3;
+                scoreSystem.SubscribeToTarget(subject);
+            }
 
             yield return new WaitForSeconds(spawnInterval);
         }

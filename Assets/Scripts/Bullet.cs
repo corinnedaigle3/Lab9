@@ -5,14 +5,12 @@ public class Bullet : MonoBehaviour
 {
     private float speed = 10f;
     private float bulletLife;
+    private Subject target;
 
-    private GameObject target;
-    private Subject subject;
 
     private void Start()
     {
-        target = GameObject.FindWithTag("Enemy");
-        subject = target.GetComponent<Subject>();
+
     }
 
     void Update()
@@ -33,8 +31,8 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy")) 
         {
-            //Debug.Log("bullet collided");
-            if (target != null) 
+            Subject subject = collision.gameObject.GetComponent<Subject>();
+            if (subject != null) 
             {
                 subject.Hit();
             }

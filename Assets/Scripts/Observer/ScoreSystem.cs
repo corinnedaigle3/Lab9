@@ -1,25 +1,30 @@
 using UnityEngine;
 using TMPro;
+using static UnityEngine.GraphicsBuffer;
 
 public class ScoreSystem : MonoBehaviour
 {
-    public Subject target;
-
     [SerializeField] private TextMeshProUGUI scoreText;
 
     private int score = 0;
 
     void Start()
     {
-        // Subscribe to the event
-        target.OnTargetHit += AddScore;
 
         UpdateScoreUI();
     }
 
+    // Called when a new target is spawned
+    public void SubscribeToTarget(Subject target)
+    {
+        target.OnTargetHit += AddScore;
+    }
+
+
     public void AddScore(int points)
     {
         score += points;
+
         Debug.Log("Score Updated, total score: " + score);
 
         UpdateScoreUI();

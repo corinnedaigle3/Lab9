@@ -6,7 +6,7 @@ public class Subject: MonoBehaviour
 
     public event TargetHitEvent OnTargetHit;
 
-    private int points = 1;
+    public int points = 1;
 
 
     private void Start()
