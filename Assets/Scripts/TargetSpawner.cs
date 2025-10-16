@@ -46,7 +46,6 @@ public class TargetSpawner : MonoBehaviour
             Subject subject = target.GetComponent<Subject>();
             if (subject != null)
             {
-                subject.points = 1; // or read from Builder if stored
                 scoreSystem.SubscribeToTarget(subject);
             }
 

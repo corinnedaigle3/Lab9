@@ -7,6 +7,7 @@ public class TargetBuilder
     public int pointValue { get; private set; }
     public GameObject prefab { get; private set; }
 
+
     private TargetBuilder() { }
 
     public class Builder
@@ -37,6 +38,7 @@ public class TargetBuilder
             return this;
         }
 
+
         public GameObject Build()
         {
             if (targetBuilder.prefab == null)
@@ -47,13 +49,21 @@ public class TargetBuilder
 
             GameObject target = Object.Instantiate(targetBuilder.prefab);
             Target targetComponent = target.GetComponent<Target>();
+            Subject subject = target.GetComponent<Subject>();
             if (targetComponent == null)
             {
                 targetComponent = target.AddComponent<Target>();
             }
 
+            if (subject != null)
+            {
+                subject.points = targetBuilder.pointValue;
+            }
+
             targetComponent.Initialize(targetBuilder.speed);
             return target;
         }
+
+
     }
 }

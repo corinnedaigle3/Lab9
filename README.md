@@ -1,6 +1,6 @@
 # Lab9
 
-Builder Pattern
+## **Builder Pattern**
 
 
 Subject (Target.cs)
@@ -30,20 +30,25 @@ Spawner (TargetSpawn1-3.cs)
 <img width="1436" height="970" alt="image" src="https://github.com/user-attachments/assets/bca11439-25e0-4a46-97be-06ab9fa5ba0e" />
 
 
-Observer Pattern
+## **Observer Pattern**
+
 
 Subject (Subject.cs)
 
-•	Defines a delegate TargetHitEvent and an event OnTargetHit
+• Defines a delegate TargetHitEvent and an event OnTargetHit.
 
-•	Calls OnTargetHit?.Invoke(points) when it is hit
+• Calls OnTargetHit?.Invoke(points) whenever the target is hit, notifying all subscribers.
 
 Observer (ScoreSystem.cs)
-•	ScoreSystem.cs subscribes to each spawned target’s OnTargetHit event.
 
-•	The method AddScore(int points) is called automatically whenever the event is triggered
+• ScoreSystem subscribes to each spawned target’s OnTargetHit event via SubscribeToTarget().
 
-•	Updates the score variable and the UI (TextMeshProUGUI) only when the event occurs
+• The method AddScore(int points) is automatically invoked whenever the event is triggered.
+
+• Updates the internal score variable and the UI (TextMeshProUGUI) only when a target is hit.
+
+<img width="546" height="561" alt="image" src="https://github.com/user-attachments/assets/4fdc28b6-bfc4-4d94-ad2d-9f3e131f44f8" />
+
 
 
 Object Pool Pattern
