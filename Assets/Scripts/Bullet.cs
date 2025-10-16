@@ -12,9 +12,9 @@ public class Bullet : MonoBehaviour
 
         transform.Translate(Vector2.up * speed * Time.deltaTime);
 
-        if( bulletLife > 3f)
+        if( bulletLife > 2f)
         {
-            Debug.Log("3 seconds up");
+            Debug.Log("2 seconds up");
             ObjectPooling.SharedInstance.DisableBullet(gameObject);
             bulletLife = 0;
         }

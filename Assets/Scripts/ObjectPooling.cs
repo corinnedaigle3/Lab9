@@ -17,7 +17,6 @@ public class ObjectPooling : MonoBehaviour
     {
         for(int i = 0; i < poolAmount; i++)
         {
-            Debug.Log("set bullets to false on run time");
             GameObject obj = Instantiate(bullet);
             obj.SetActive(false);
             pool.Enqueue(obj);

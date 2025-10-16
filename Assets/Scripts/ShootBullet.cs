@@ -8,7 +8,7 @@ public class ShootBullet : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             bullet = ObjectPooling.SharedInstance.GetBullet();
             Debug.Log("Shoot");
