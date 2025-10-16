@@ -30,6 +30,9 @@ Spawner (TargetSpawn1-3.cs)
 <img width="1436" height="970" alt="image" src="https://github.com/user-attachments/assets/bca11439-25e0-4a46-97be-06ab9fa5ba0e" />
 
 
+#Observer Pattern
+
+
 Subject (Subject.cs)
 
 • Defines a delegate TargetHitEvent and an event OnTargetHit.
