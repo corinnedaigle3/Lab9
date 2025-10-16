@@ -69,6 +69,5 @@ Shooting (ShootBullet.cs)
 
 • Retrieves and sets the transform positions of a bullet game object from the GetBullet function in the ObjectPooling script when the Space bar is pressed
 
-
-
+<img width="560" height="283" alt="Screenshot 2025-10-16 193527" src="https://github.com/user-attachments/assets/f4e4368c-791a-4092-a5dc-9851e193d448" />
 
