@@ -1,5 +1,4 @@
 using UnityEngine;
-using static Observer;
 
 public class Subject: MonoBehaviour
 {
@@ -8,6 +7,11 @@ public class Subject: MonoBehaviour
     public event TargetHitEvent OnTargetHit;
 
     private int points = 1;
+
+
+    private void Start()
+    {
+    }
 
     public void Hit()
     {

@@ -6,6 +6,15 @@ public class Bullet : MonoBehaviour
     private float speed = 10f;
     private float bulletLife;
 
+    private GameObject target;
+    private Subject subject;
+
+    private void Start()
+    {
+        target = GameObject.FindWithTag("Enemy");
+        subject = target.GetComponent<Subject>();
+    }
+
     void Update()
     {
         bulletLife += Time.deltaTime;
@@ -24,7 +33,12 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy")) 
         {
-            Debug.Log("bullet collided");
+            //Debug.Log("bullet collided");
+            if (target != null) 
+            {
+                subject.Hit();
+            }
+
             ObjectPooling.SharedInstance.DisableBullet(gameObject);
         }
     }
