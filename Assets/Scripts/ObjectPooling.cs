@@ -27,7 +27,7 @@ public class ObjectPooling : MonoBehaviour
         if(pool.Count > 0)
         {
             Debug.Log("Got bullet");
-             GameObject obj = pool.Dequeue();
+            GameObject obj = pool.Dequeue();
             obj.SetActive(true);
             return obj;
         }
