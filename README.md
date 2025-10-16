@@ -54,14 +54,21 @@ Observer (ScoreSystem.cs)
 ## **Object Pool Pattern**
 
 Subject(Bullet.cs)
+
 • Returns the bullet game object back into the pool through the DisableBullet function in the ObjectPooling script when 2 seconds have passed or when the bullet has hit a target
 
 Object Pooler(ObjectPooling.cs)
+
 • Creates a pool that can hold a predetermined number of game objects and instantiates them all on Start
+
 • GetBullet function that sets active a bullet gameobject from the pool and returns it 
+
 • DisableBullet function that sets the active bullet game object to not active and returns it back into the pool
 
 Shooting (ShootBullet.cs)
+
 • Retrieves and sets the transform positions of a bullet game object from the GetBullet function in the ObjectPooling script when the Space bar is pressed
+
+
 
 
