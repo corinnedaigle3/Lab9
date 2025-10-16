@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private GameObject bullet;
     public float moveSpeed;
     void Start()
     {
-       // bullet = ObjectPooling.SharedInstance.GetPooledObject();
         moveSpeed = 10f;
     }
     void Update()
@@ -21,11 +19,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Move left");
             transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Debug.Log("Shoot");
-            bullet.SetActive(true);
         }
     }
 }

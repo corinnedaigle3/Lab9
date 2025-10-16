@@ -3,30 +3,29 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private GameObject bullet;
-    void Start()
-    {
-        bullet = ObjectPooling.SharedInstance.GetPooledObject();
-
-    }
+    private float speed = 10f;
+    private float bulletLife;
 
     void Update()
     {
-        
-    }
+        bulletLife += Time.deltaTime;
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision == null) //If collides with enemy send bullet back to pool
+        transform.Translate(Vector2.up * speed * Time.deltaTime);
+
+        if( bulletLife > 3f)
         {
-            bullet.SetActive(false);
+            Debug.Log("3 seconds up");
+            ObjectPooling.SharedInstance.DisableBullet(gameObject);
+            bulletLife = 0;
         }
     }
 
-    IEnumerator DestroyBullet()
+    private void OnCollisionEnter(Collision collision)
     {
-        yield return new WaitForSeconds(5.0f);
-        bullet.SetActive(false);
+        if (collision.gameObject.CompareTag("Enemy")) 
+        {
+            Debug.Log("bullet collided");
+            ObjectPooling.SharedInstance.DisableBullet(gameObject);
+        }
     }
-
 }

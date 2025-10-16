@@ -4,41 +4,41 @@ using System.Collections.Generic;
 public class ObjectPooling : MonoBehaviour
 {
     public static ObjectPooling SharedInstance;
-    public List<GameObject> pooledBullets;
-    public GameObject bulletToPool;
-    public int poolAmount;
+    public GameObject bullet;
+    public int poolAmount = 10;
+
+    private Queue<GameObject> pool = new Queue<GameObject>();
 
     private void Awake()
     {
         SharedInstance = this;
     }
-
     void Start()
     {
-        pooledBullets = new List<GameObject>();
-        GameObject tmp;
-
         for(int i = 0; i < poolAmount; i++)
         {
-            tmp = Instantiate(bulletToPool);
-            tmp.SetActive(false);
-            pooledBullets.Add(tmp);
+            Debug.Log("set bullets to false on run time");
+            GameObject obj = Instantiate(bullet);
+            obj.SetActive(false);
+            pool.Enqueue(obj);
         }
-        
     }
-
-
-    public GameObject GetPooledObject()
+    public GameObject GetBullet()
     {
-        for(int i = 0; i < poolAmount; i++)
+        if(pool.Count > 0)
         {
-            if (!pooledBullets[i].activeInHierarchy)
-            {
-                return pooledBullets[i];
-            }
+            Debug.Log("Got bullet");
+             GameObject obj = pool.Dequeue();
+            obj.SetActive(true);
+            return obj;
         }
 
-        return null;
-        
+        return null; 
+    }
+    public void DisableBullet(GameObject obj)
+    {
+        Debug.Log("Disabled bullet");
+        obj.SetActive(false);
+        pool.Enqueue(obj);
     }
 }
