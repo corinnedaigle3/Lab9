@@ -51,7 +51,7 @@ Observer (ScoreSystem.cs)
 
 
 
-Object Pool Pattern
+## **Object Pool Pattern**
 
 Subject(Bullet.cs)
 • Returns the bullet game object back into the pool through the DisableBullet function in the ObjectPooling script when 2 seconds have passed or when the bullet has hit a target
