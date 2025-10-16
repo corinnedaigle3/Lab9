@@ -3,7 +3,6 @@
 Builder Pattern
 
 
-
 Subject (Target.cs)
 
 •	Sets the rigidbody velocity to move right * speed from TargetBuilder.cs to the spawned targets in TargetSpawner.cs 1-3
@@ -28,5 +27,4 @@ Spawner (TargetSpawn1-3.cs)
 
 •	Returns the Build function
 
-
-<img width="1445" height="1014" alt="image" src="https://github.com/user-attachments/assets/70b82a0a-b364-41a0-a484-52dce8017c92" />
+<img width="1436" height="970" alt="image" src="https://github.com/user-attachments/assets/bca11439-25e0-4a46-97be-06ab9fa5ba0e" />
