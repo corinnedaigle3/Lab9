@@ -46,7 +46,6 @@ public class TargetSpawner2 : MonoBehaviour
             Subject subject = target.GetComponent<Subject>();
             if (subject != null)
             {
-                subject.points = 2;
                 scoreSystem.SubscribeToTarget(subject);
             }
 
