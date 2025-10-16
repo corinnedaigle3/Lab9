@@ -28,3 +28,20 @@ Spawner (TargetSpawn1-3.cs)
 •	Returns the Build function
 
 <img width="1436" height="970" alt="image" src="https://github.com/user-attachments/assets/bca11439-25e0-4a46-97be-06ab9fa5ba0e" />
+
+
+Observer Pattern
+
+Subject (Subject.cs)
+
+•	Defines a delegate TargetHitEvent and an event OnTargetHit
+
+•	Calls OnTargetHit?.Invoke(points) when it is hit
+
+Observer (ScoreSystem.cs)
+•	ScoreSystem.cs subscribes to each spawned target’s OnTargetHit event.
+
+•	The method AddScore(int points) is called automatically whenever the event is triggered
+
+•	Updates the score variable and the UI (TextMeshProUGUI) only when the event occurs
+
