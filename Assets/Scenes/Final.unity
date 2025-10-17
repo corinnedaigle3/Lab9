@@ -549,7 +549,8 @@ MonoBehaviour:
   - {fileID: 7500921522816554908, guid: 29a84f196ebe4ce4c9447c874b46d73a, type: 3}
   - {fileID: 8058682524644948443, guid: ac6cd7e1b912b4240ae7197c1136b3c5, type: 3}
   spawnInterval: 0.75
-  spawnPosition: {x: -10, y: 3}
+  spawnPosition: {x: -10, y: 2}
+  scoreSystem: {fileID: 928400042}
 --- !u!4 &266671771
 Transform:
   m_ObjectHideFlags: 0
@@ -594,7 +595,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bc61e9889d77b248939c2ff46da1c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreSystem
-  target: {fileID: 0}
   scoreText: {fileID: 1804411779}
 --- !u!4 &928400043
 Transform:
@@ -781,7 +781,8 @@ MonoBehaviour:
   - {fileID: 7500921522816554908, guid: 29a84f196ebe4ce4c9447c874b46d73a, type: 3}
   - {fileID: 8058682524644948443, guid: ac6cd7e1b912b4240ae7197c1136b3c5, type: 3}
   spawnInterval: 0.5
-  spawnPosition: {x: -10, y: 1.5}
+  spawnPosition: {x: -10, y: 0.5}
+  scoreSystem: {fileID: 928400042}
 --- !u!4 &1121705094
 Transform:
   m_ObjectHideFlags: 0
@@ -1068,7 +1069,8 @@ MonoBehaviour:
   - {fileID: 7500921522816554908, guid: 29a84f196ebe4ce4c9447c874b46d73a, type: 3}
   - {fileID: 8058682524644948443, guid: ac6cd7e1b912b4240ae7197c1136b3c5, type: 3}
   spawnInterval: 1
-  spawnPosition: {x: -10, y: 4.5}
+  spawnPosition: {x: -10, y: 3.5}
+  scoreSystem: {fileID: 928400042}
 --- !u!4 &1988735968
 Transform:
   m_ObjectHideFlags: 0
