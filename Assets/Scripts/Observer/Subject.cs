@@ -18,5 +18,6 @@ public class Subject: MonoBehaviour
         Debug.Log("Target was hit");
 
         OnTargetHit?.Invoke(points);
+        Destroy(gameObject);
     }
 }
