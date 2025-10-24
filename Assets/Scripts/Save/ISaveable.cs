@@ -29,12 +29,22 @@ public static class SavingService
         if (allSaveableObjects.Count() > 0)
         {
             var savedObjects = new JsonData();
+            savedObjects.SetJsonType(JsonType.Array); // important for array
+
             foreach (var saveableObject in allSaveableObjects)
             {
                 var data = saveableObject.SavedData;
-                var behaviour = saveableObject as MonoBehaviour;
-                Debug.LogWarningFormat(behaviour, "{0}'s save data is not a dictionary. The object was not saved.", behaviour.name);
+                if (data == null || !data.IsObject)
+                {
+                    var behaviour = saveableObject as MonoBehaviour;
+                    Debug.LogWarningFormat(behaviour, "{0}'s save data is not a dictionary. Skipping save.", behaviour.name);
+                    continue;
+                }
+
+                data[SAVEID_KEY] = saveableObject.SaveID;
+                savedObjects.Add(data);
             }
+
             result[OBJECTS_KEY] = savedObjects;
         }
         else
@@ -72,6 +82,10 @@ public static class SavingService
         if (File.Exists(dataPath) == false)
         {
             Debug.LogErrorFormat("No file exists at {0}", dataPath); return false;
+        }
+        else
+        {
+            Debug.Log("Load Game: file exists");
         }
 
         var text = File.ReadAllText(dataPath);
