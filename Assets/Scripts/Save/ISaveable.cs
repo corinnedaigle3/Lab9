@@ -5,7 +5,6 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public interface ISaveable
 {
@@ -29,7 +28,7 @@ public static class SavingService
         if (allSaveableObjects.Count() > 0)
         {
             var savedObjects = new JsonData();
-            savedObjects.SetJsonType(JsonType.Array); // important for array
+            savedObjects.SetJsonType(JsonType.Array);
 
             foreach (var saveableObject in allSaveableObjects)
             {

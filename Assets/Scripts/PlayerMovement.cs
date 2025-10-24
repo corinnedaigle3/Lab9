@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
 
     private TransformSaver transformSaver;
 
+    [SerializeField] private ScoreSystem scoreSystem;
+
     void Start()
     {
         moveSpeed = 10f;
@@ -33,11 +35,13 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Save Game");
             SavingService.SaveGame("save.json");
+            scoreSystem.Save_Score();
         }
         if (Input.GetKey(KeyCode.L))
         {
             Debug.Log("Load Game");
             SavingService.LoadGame("save.json");
+            scoreSystem.Load_Score();
         }
     }
 }

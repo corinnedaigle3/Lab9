@@ -37,4 +37,17 @@ public class ScoreSystem : MonoBehaviour
             scoreText.text = score.ToString();
         }
     }
+
+    public void Save_Score()
+    {
+        SaveScore.SavingScore(score); ;
+        Debug.Log("Score saved.");
+    }
+
+    public void Load_Score()
+    {
+        score = SaveScore.LoadScore();
+        UpdateScoreUI();
+        Debug.Log("Score loaded: " + score);
+    }
 }
