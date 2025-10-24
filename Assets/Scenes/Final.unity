@@ -130,6 +130,8 @@ GameObject:
   - component: {fileID: 165372567}
   - component: {fileID: 165372566}
   - component: {fileID: 165372565}
+  - component: {fileID: 165372569}
+  - component: {fileID: 165372568}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -211,6 +213,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &165372568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165372564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ab7815ba6c8cfa409a02b77ff7ddf4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveManager
+  saveFileName: gameSave.json
+  scoreSystem: {fileID: 928400042}
+--- !u!114 &165372569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165372564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!1 &186010516
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,8 +606,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TargetSpawner2
   enemyPrefabs:
   - {fileID: 7500921522816554908, guid: 29a84f196ebe4ce4c9447c874b46d73a, type: 3}
-  - {fileID: 7500921522816554908, guid: 29a84f196ebe4ce4c9447c874b46d73a, type: 3}
-  - {fileID: 8058682524644948443, guid: ac6cd7e1b912b4240ae7197c1136b3c5, type: 3}
   spawnInterval: 0.75
   spawnPosition: {x: -10, y: 2}
   scoreSystem: {fileID: 928400042}
@@ -778,8 +836,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TargetSpawner
   enemyPrefabs:
   - {fileID: 3804419237513793567, guid: 2a8a5135e7e53214d9a224e65eac53af, type: 3}
-  - {fileID: 7500921522816554908, guid: 29a84f196ebe4ce4c9447c874b46d73a, type: 3}
-  - {fileID: 8058682524644948443, guid: ac6cd7e1b912b4240ae7197c1136b3c5, type: 3}
   spawnInterval: 0.5
   spawnPosition: {x: -10, y: 0.5}
   scoreSystem: {fileID: 928400042}
@@ -901,29 +957,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4217493449978902540, guid: f7319d9622adeee41969b5829001b2c5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1329752232}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7319d9622adeee41969b5829001b2c5, type: 3}
---- !u!1 &1329752226 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4217493449978902540, guid: f7319d9622adeee41969b5829001b2c5, type: 3}
-  m_PrefabInstance: {fileID: 1329752225}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1329752232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329752226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97c2757fabcf9fe4ab97ea46f6f56be8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TransformSaver
-  saveID: Player
 --- !u!1 &1804411778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,8 +1125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetSpawner3
   enemyPrefabs:
-  - {fileID: 3804419237513793567, guid: 2a8a5135e7e53214d9a224e65eac53af, type: 3}
-  - {fileID: 7500921522816554908, guid: 29a84f196ebe4ce4c9447c874b46d73a, type: 3}
   - {fileID: 8058682524644948443, guid: ac6cd7e1b912b4240ae7197c1136b3c5, type: 3}
   spawnInterval: 1
   spawnPosition: {x: -10, y: 3.5}

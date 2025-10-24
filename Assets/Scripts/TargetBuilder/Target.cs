@@ -4,6 +4,22 @@ public class Target : MonoBehaviour
 {
     private float speed;
     private Rigidbody2D rb;
+    public SaveManager saveManager;
+
+    public void Start()
+    {
+        saveManager = FindAnyObjectByType<SaveManager>();
+    }
+
+    public void Update()
+    {
+        if (saveManager.savedDestroy == true)
+        {
+            Destroy(gameObject);
+            saveManager.savedDestroy = false;
+            Debug.Log("Destroyed");
+        }
+    }
 
     public void Initialize(float moveSpeed)
     {

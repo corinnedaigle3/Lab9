@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 1460200682407588180}
   - component: {fileID: 5224292707371804694}
   - component: {fileID: 4081306912858493970}
+  - component: {fileID: 8368079764034582818}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -137,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   moveSpeed: 0
+  scoreSystem: {fileID: 0}
 --- !u!114 &4081306912858493970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,3 +152,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShootBullet
   spawnPoint: {fileID: 8762747374101882400}
+--- !u!114 &8368079764034582818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4217493449978902540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c2757fabcf9fe4ab97ea46f6f56be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TransformSaver
+  saveID: Player

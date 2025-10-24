@@ -10,7 +10,7 @@ public class ScoreData
 
 public static class SaveScore
 {
-    private static string fileName = "score.json";
+    private static string fileName = "score.dat";
 
     public static void SavingScore(int score)
     {

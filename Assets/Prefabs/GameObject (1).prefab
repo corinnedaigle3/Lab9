@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4221607686523575860}
   - component: {fileID: -1339622761337634869}
   - component: {fileID: -6947691858278375949}
+  - component: {fileID: 5110353305466382056}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Enemy
@@ -178,3 +179,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdad465d37b6cd648a7e168a0691fbe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Subject
+  points: 1
+--- !u!114 &5110353305466382056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7500921522816554908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c2757fabcf9fe4ab97ea46f6f56be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TransformSaver
+  saveID: 

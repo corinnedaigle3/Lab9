@@ -61,6 +61,17 @@ public class TargetBuilder
             }
 
             targetComponent.Initialize(targetBuilder.speed);
+
+            var saver = target.GetComponent<TransformSaver>();
+            if (saver != null)
+            {
+                saver.name = "Enemy_" + System.Guid.NewGuid().ToString();
+                // unique saveID
+                var field = typeof(TransformSaver).GetField("saveID", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+                field.SetValue(saver, saver.name);
+            }
+
+
             return target;
         }
 
