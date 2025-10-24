@@ -20,5 +20,15 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Move left");
             transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
         }
+        if (Input.GetKey(KeyCode.S))
+        {
+            Debug.Log("Save Game");
+            
+        }
+        if (Input.GetKey(KeyCode.L))
+        {
+            Debug.Log("Load Game");
+            
+        }
     }
 }
