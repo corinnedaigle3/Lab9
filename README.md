@@ -3,8 +3,11 @@
 ## **Save and Load**
 
 • ISaveable.cs is an interface that defines the saved data using an Id. It has a saving class that manages the actual saving and loading of objects.
+
 • TransformerSaver.cs uses the ISaveable interface to retrieve and update the json data of the player and target positions.
+
 • SaveManager.cs implements the saving/loading when the respective keyboard buttons are pressed and destroys the save when it is loaded.
+
 • SaveScore.cs saves and loads the score using a Binary file. 
 
 ## **Builder Pattern**
