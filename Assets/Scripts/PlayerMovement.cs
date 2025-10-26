@@ -31,17 +31,6 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log("Move left");
             transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.S))
-        {
-            Debug.Log("Save Game");
-            SavingService.SaveGame("save.json");
-            scoreSystem.Save_Score();
-        }
-        if (Input.GetKey(KeyCode.L))
-        {
-            Debug.Log("Load Game");
-            SavingService.LoadGame("save.json");
-            scoreSystem.Load_Score();
-        }
+       
     }
 }
