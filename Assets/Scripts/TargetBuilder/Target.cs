@@ -13,6 +13,7 @@ public class Target : MonoBehaviour
 
     public void Update()
     {
+        //Destory targets when loading
         if (saveManager.savedDestroy == true)
         {
             Destroy(gameObject);
